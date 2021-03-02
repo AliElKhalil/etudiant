@@ -60,9 +60,15 @@ void saisir_etudiant()
         menu_ajout(&b); //done
     }while(b!=0 && b!=1);
     while (b!=0)
-
     {
-        ajout_etudiant(); //done
+        if (b==1)
+        {
+            ajout_etudiant(); //done
+        }
+        if (b==2)
+        {
+            fusion_fichier();
+        }
         do{
             menu_ajout(&b);
         }while(b!=0 && b!=1);
@@ -112,7 +118,14 @@ void suppression_etudiant()
     }while(b!=0 && b!=1);
     while (b!=0)
     {
-        supprimer_etudiant(); //done
+        if (b==1)
+        {
+            supprimer_etudiant(); //done
+        }
+        if (b==2)
+        {
+            supprimer_fichier();
+        }
         do{
             menu_suppression_etudiant(&b);
         }while(b!=0 && b!=1);

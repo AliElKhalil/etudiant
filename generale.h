@@ -104,3 +104,28 @@ int nombre_ligne(FILE *fic)
     }
     return (n);
 }
+
+
+void fusion_fichier()
+{
+    system("cls");
+    printf("\nSaisir les deux fichiers à fusionner");
+    char t1[Mmax];
+    char t2[Mmax]:
+    char t3[Mmax];
+    printf("\nPremier fichier : ");
+    scanf("%s",t1);
+    printf("\nDeuxième fichier : ");
+    scanf("%s",t2);
+    printf("\nCreer  un nouveau fichier ou ajouter la fusion des deux fichier à un autre fichier")
+    printf("\nDonnez le nom du fichier a creer/ouvrir : ");
+    scanf("%s",t3);
+    FILE *fic1=fopen(t1,"r");
+    FILE *fic2=fopen(t2,"r");
+    FILE *fic3=fopen(t3,"a+");
+    if (fic1==NULL || fic2==NULL ||fic3==NULL)
+    {
+        printf("\nErreur dans l'ouverture des fichiers.");
+    }
+
+}

@@ -11,6 +11,7 @@ Déscription : Module avec des fonctions et procédure générale.
 #include <string.h>  //usage de chaines de caractère
 #include<math.h>
 
+#define Mmax 50 //taille max des chaines de caractere representant les noms des fichiers
 #define nmax 50
 
 int saisir_n()      //Fonction pour demander à l'utilisateur de saisir un entier
@@ -109,23 +110,91 @@ int nombre_ligne(FILE *fic)
 void fusion_fichier()
 {
     system("cls");
-    printf("\nSaisir les deux fichiers à fusionner");
+    printf("\nSaisie des deux fichiers à fusionner.");
     char t1[Mmax];
-    char t2[Mmax]:
+    char t2[Mmax];
     char t3[Mmax];
     printf("\nPremier fichier : ");
     scanf("%s",t1);
+    system("cls");
     printf("\nDeuxième fichier : ");
     scanf("%s",t2);
-    printf("\nCreer  un nouveau fichier ou ajouter la fusion des deux fichier à un autre fichier")
+    system("cls");
+    printf("\nCreer  un nouveau fichier ou ajouter la fusion des deux fichier à un autre fichier.");
     printf("\nDonnez le nom du fichier a creer/ouvrir : ");
     scanf("%s",t3);
+    system("cls");
     FILE *fic1=fopen(t1,"r");
     FILE *fic2=fopen(t2,"r");
-    FILE *fic3=fopen(t3,"a+");
+    FILE *fic3=fopen(t3,"a");
     if (fic1==NULL || fic2==NULL ||fic3==NULL)
     {
         printf("\nErreur dans l'ouverture des fichiers.");
     }
+    else
+    {
+        rewind(fic1);
+        rewind(fic2);
+        char texte[256];
+        while (fgets(texte,255,fic1)!=NULL)
+        {
+            fputs(texte,fic3);
+        }
+        while (fgets(texte,255,fic2)!=NULL)
+        {
+            fputs(texte,fic3);
+        }
+        fclose(fic1);
+        fclose(fic2);
+        fclose(fic3);
+        printf("\nLes fichiers %s et %s ont été fusionné et ajouté au fichier %s",t1,t2,t3);
+    }
+    system("pause");
+    system("cls");
+}
 
+void supprimer_fichier()
+{
+    char NomFichier[Mmax];
+    int c;
+    printf("\nDonner le nom du fichier a supprimer : ");
+    scanf ("%s",NomFichier);
+    system("cls");
+    printf("\nAttention, vous vous appretez a supprimer le fichier %s.",NomFichier);
+    system("pause");
+    printf("\nConfirmez la suppression du fichier %s : ",NomFichier);
+    do
+    {
+        printf("\nSaisissez 1 si oui, 0 si non.");
+        scanf("%d",&c);
+    }while(c!=0 && c!=1);
+    if (c==1)
+    {
+        remove(NomFichier);
+        printf("\nSuppression effectuée.");
+    }
+    system("pause");
+    system("cls");
+}
+
+void fin_programme()
+{
+    system("cls");
+    printf("\nFin du programme.");
+    printf("\nMerci de l'avoir utilise.");
+    printf("\n\nBy Ali El Khalil, student at IPSA.");
+    trait();
+    printf("\n");
+    system("pause");
+}
+
+void debut_programme(const char *t[])
+{
+    system("cls");
+    printf("\t\t%s",t);
+    printf("\n\t\t~~~~~~~~~~~~~~");
+    printf("\n\t\t   Bienvenu");
+    printf("\n\t\t~~~~~~~~~~~~~~\n");
+    system("pause");
+    system("cls");
 }

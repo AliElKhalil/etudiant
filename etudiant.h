@@ -7,7 +7,6 @@ Titre : etudiant.h
 Déscription : structure etudiant, fonction et procédure liées.
 ---------------------------------------------------------------*/
 #include "date.h"
-#define Mmax 50 //taille max des chaines de caractere representant les noms des fichiers
 #define NombreNote 3
 
 typedef struct

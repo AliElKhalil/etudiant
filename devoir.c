@@ -38,6 +38,7 @@ void menu_suppression_etudiant(int *b)
     printf("\n===Menu suppression d'etudiant===");
     trait();
     printf("\n1-Supprimer un etudiant");
+    printf("\n2-Supprimer un fichier d'etudiant");
     printf("\n0-Retour au menu principal\n");
     scanf("%d",b);
 }
@@ -68,6 +69,9 @@ void saisir_etudiant()
         if (b==2)
         {
             fusion_fichier();
+            printf("\nRetour au menu d'ajout");
+            system("pause");
+            system("cls");
         }
         do{
             menu_ajout(&b);
@@ -99,9 +103,9 @@ void menu_principal(int *a)
 {
     system("cls");
     trait();
-    printf("\n###Menu principal###");
+    printf("\n   ###Menu principal###");
     trait();
-    printf("\n1-Saisir etudiant");
+    printf("\n1-Ajouter des etudiants");
     printf("\n2-Rechercher et afficher etudiant");
     printf("\n3-Supprimer un etudiant");
     printf("\n4-Modifier un etudiant");
@@ -125,6 +129,9 @@ void suppression_etudiant()
         if (b==2)
         {
             supprimer_fichier();
+            printf("\nRetour au menu suppression.");
+            system("pause");
+            system("cls");
         }
         do{
             menu_suppression_etudiant(&b);
@@ -151,6 +158,7 @@ void modification_etudiant()
 
 main()
 {
+    debut_programme("Gestion d'etudiant");
     int *a;
     do
     {
@@ -174,4 +182,5 @@ main()
             modification_etudiant();
         }
     }while (a!=0);
+    fin_programme();
 }

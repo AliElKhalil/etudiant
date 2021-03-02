@@ -147,7 +147,7 @@ void fusion_fichier()
         fclose(fic1);
         fclose(fic2);
         fclose(fic3);
-        printf("\nLes fichiers %s et %s ont été fusionné et ajouté au fichier %s",t1,t2,t3);
+        printf("\n\aLes fichiers %s et %s ont été fusionné et ajouté au fichier %s",t1,t2,t3);
     }
     system("pause");
     system("cls");
@@ -171,7 +171,7 @@ void supprimer_fichier()
     if (c==1)
     {
         remove(NomFichier);
-        printf("\nSuppression effectuée.");
+        printf("\n\aSuppression effectuée.");
     }
     system("pause");
     system("cls");
@@ -194,7 +194,8 @@ void debut_programme(const char *t[])
     printf("\t\t%s",t);
     printf("\n\t\t~~~~~~~~~~~~~~");
     printf("\n\t\t   Bienvenu");
-    printf("\n\t\t~~~~~~~~~~~~~~\n");
+    printf("\n\t\t~~~~~~~~~~~~~~");
+    printf("\n\n\n");
     system("pause");
     system("cls");
 }

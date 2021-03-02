@@ -147,7 +147,7 @@ void ajout_etudiant()
         saisie_fichier_n_etudiant(fic,e,n);
         fclose(fic);
         free(e);
-        printf("\nAjout effectuee.");
+        printf("\n\aAjout effectuee.");
     }
     printf("\nRetour au menu d'ajout\n");
     system("pause");
@@ -278,7 +278,7 @@ void supprimer_etudiant()
             }while (i<0 && i>k-1);
             j=tab[i];
             supprimer_1_ligne(NomFichier,j);
-            printf("\nSuppression effectuée.");
+            printf("\n\aSuppression effectuée.");
         }
         else
         {
@@ -392,7 +392,7 @@ void modifier_etudiant()
             system("cls");
             j=tab[i];
             modifier_1_etudiant(NomFichier,j);
-            printf("\modification effectuée.");
+            printf("\n\aModification effectuée.");
         }
         else
         {

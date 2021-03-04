@@ -3,7 +3,7 @@ Nom : EL KHALIL
 Prénom : Ali
 Classe : 3PSC
 Groupe : C1
-Titre : Devoir
+Titre : gestion_etudiant
 Déscription : Travail demandé pour le 04/03/2021.
 ---------------------------------------------------------------*/
 #include "etudiant.h"
@@ -15,6 +15,7 @@ void menu_ajout(int *b)
     printf("\n===Menu ajout etudiant===");
     trait();
     printf("\n1-Ajouter un etudiant");
+    printf("\n2-Fusionner deux fichiers");
     printf("\n0-Retour au menu principal\n");
     scanf("%d",b);
 }
@@ -59,7 +60,7 @@ void saisir_etudiant()
     int b;
     do{
         menu_ajout(&b); //done
-    }while(b!=0 && b!=1);
+    }while(b!=0 && b!=1 && b!=2);
     while (b!=0)
     {
         if (b==1)
@@ -119,7 +120,7 @@ void suppression_etudiant()
     int b;
     do{
         menu_suppression_etudiant(&b); //done
-    }while(b!=0 && b!=1);
+    }while(b!=0 && b!=1 && b!=2);
     while (b!=0)
     {
         if (b==1)
